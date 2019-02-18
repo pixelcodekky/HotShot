@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Budget"; ObjectID = "3T0-f0-eRg"; */
+"3T0-f0-eRg.text" = "Budget";
+
+/* Class = "UILabel"; text = "No Internet Connection"; ObjectID = "GI5-Vb-zVX"; */
+"GI5-Vb-zVX.text" = "No Internet Connection";
+
+/* Class = "UILabel"; text = "Facts"; ObjectID = "J81-72-gfE"; */
+"J81-72-gfE.text" = "Facts";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "Qdq-Hu-LjV"; */
+"Qdq-Hu-LjV.text" = "--";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "gL0-1z-vFg"; */
+"gL0-1z-vFg.text" = "--";
+
+/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "j0e-gS-wKw"; */
+"j0e-gS-wKw.title" = "Movies";
+
+/* Class = "UILabel"; text = "Overview"; ObjectID = "pTA-WS-2KP"; */
+"pTA-WS-2KP.text" = "Overview";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ruW-cj-6f1"; */
+"ruW-cj-6f1.text" = "Label";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "vW8-sW-yW1"; */
+"vW8-sW-yW1.text" = "--";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "xM2-Lo-JmD"; */
+"xM2-Lo-JmD.text" = "Status";

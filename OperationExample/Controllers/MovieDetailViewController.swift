@@ -22,7 +22,7 @@ class MovieDetailViewController : UIViewController{
     let urlCache = URLCache(memoryCapacity: 20*1024*1024, diskCapacity: 20*1024*1024, diskPath: nil)
     
     
-    var mainImage_url : String = "https://image.tmdb.org/t/p/original/"
+    var mainImage_url : String = "https://image.tmdb.org/t/p/w500/"
     var movieID : Int = 0
     //https://image.tmdb.org/t/p/original//lvjscO8wmpEbIfOEZi92Je8Ktlg.jpg
     var urlimg : URL?

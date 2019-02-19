@@ -12,7 +12,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     
-    var image_url : String = "https://image.tmdb.org/t/p/original/"
+    //var image_url : String = "https://image.tmdb.org/t/p/original/"
+    var image_url : String = "https://image.tmdb.org/t/p/w500/"
     
     var movies : [MovieModel] = []
     var imgInfo : [ImageInfo] = []

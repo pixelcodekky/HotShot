@@ -21,6 +21,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let configuration = URLSessionConfiguration.default
     var session : URLSession?
     var isConnected : Bool = true
+    let commonobj = CommonWorker()
+    let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.dataSource = self
         tableView.prefetchDataSource = self
         
+        tableView.rowHeight = 166
+        
         // Do any additional setup after loading the view, typically from a nib.
         tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "moviecell")
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        //Configure refresh control
+        refreshControl.addTarget(self, action: #selector(refreshMovies(_ :)), for: .valueChanged)
+        refreshControl.tintColor = UIColor(named: "green")
+        //refreshControl.attributedTitle = NSAttributedString(string: "Refreshing Movies ...", attributes: attributes)
+        
+        if !isConnected{
+            commonobj.showToast(controller: self, message: "Not Connected", second: 1)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,7 +123,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             }
         }else{
             isConnected = false
+            commonobj.showToast(controller: self, message: "Not Connected", second: 1)
         }
+    }
+    
+    @objc func refreshMovies(_ sender : Any){
+        if isConnected {
+            movies = []
+            startFetching()
+        }
+        refreshControl.endRefreshing()
+    }
+    
+    func dispatchDelay(delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay, execute: closure)
     }
     
     func fetchMovies(urlpara : URL){

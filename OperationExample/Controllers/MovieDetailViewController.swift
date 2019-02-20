@@ -54,7 +54,7 @@ class MovieDetailViewController : UIViewController{
             task.resume()
         }else{
             populateDetail(data: cacheResponse?.data,urlrequest: urlrequest,isCached: true)
-            //print("print from cache")
+            print("print from cache")
         }
     }
     
@@ -70,6 +70,7 @@ class MovieDetailViewController : UIViewController{
                         self.detail_budget.text = "\(formattedTipAmount)"
                     }
                     self.detail_overview.text = movieDetail.overview ?? ""
+                    self.title = movieDetail.title ?? ""
                 }
                     let config = URLSessionConfiguration.default
                     //Enable url cache in session configuration and assign capacity
